@@ -31,7 +31,7 @@
 #ifndef __DRIVERS_UART_PORT_H__
 #define __DRIVERS_UART_PORT_H__
 
-#include <io.h>
+#define UART_PORT_FRAME_FORMAT_DEFAULT 0
 
 struct uart_device_t {
     struct uart_driver_t *drv_p;
@@ -43,6 +43,7 @@ struct uart_driver_t {
     const struct uart_device_t *dev_p;
     struct mutex_t mutex;
     long baudrate;
+    int format;
     size_t rxsize;
 };
 
